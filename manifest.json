@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "小红书深度调研助手",
+  "version": "2.0",
+  "description": "自动抓取前10条笔记及全量评论，生成深度调研报告",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://www.xiaohongshu.com/*",
+    "http://127.0.0.1:3000/*"
+  ],
+  "action": {
+    "default_title": "开始调研"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.xiaohongshu.com/search_result*"],
+      "js": ["content.js"],
+      "css": ["style.css"]
+    }
+  ]
+}
